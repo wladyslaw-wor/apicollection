@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Article.views import ArticleAPIView
+from decision import views
 
 handler404 = 'Article.views.error_404_view'
 
@@ -23,4 +24,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/article', ArticleAPIView.as_view()),
     path('api/v1/article/', ArticleAPIView.as_view()),
+    path('decision/', views.decision),
 ]
