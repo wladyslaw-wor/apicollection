@@ -16,13 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Article.views import ArticleAPIView
-from decision import views
+from decision import views as view1
+from homepage import views as view2
 
 handler404 = 'Article.views.error_404_view'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/article', ArticleAPIView.as_view()),
+    # path('api/v1/article', ArticleAPIView.as_view()),
     path('api/v1/article/', ArticleAPIView.as_view()),
-    path('decision/', views.decision),
+    path('decision/', view1.decision),
+    path('', view2.homepage),
+    path('documentation/', view2.documentation),
 ]

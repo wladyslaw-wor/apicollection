@@ -1,0 +1,28 @@
+{% extends "homepage/basis.html" %}
+
+{% load static %}
+
+{% block content %}
+<h1>List</h1>
+<div class="list-group">
+  <a href="/api/v1/article" class="list-group-item list-group-item-action" aria-current="true" target="_blank">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Article</h5>
+    </div>
+    <p class="mb-1">API with random texts in Russian language.</p>
+  </a>
+  <a href="/decision" class="list-group-item list-group-item-action" target="_blank">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Decision-Making System</h5>
+    </div>
+    <p class="mb-1">Page for making decisions. Answers: YES or NO (1:1000 Maybe)</p>
+  </a>
+  <a href="#" class="list-group-item list-group-item-action">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">RLS</h5>
+    </div>
+    <p class="mb-1">Register of medicaments with attributes like WHO-ATC, Nosology group etc</p>
+    <small class="text-muted">In the pipeline</small>
+  </a>
+</div>
+{% endblock %}

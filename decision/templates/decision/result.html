@@ -1,43 +1,27 @@
+{% extends "homepage/basis.html" %}
+
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Required meta tags -->
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-      <link rel="stylesheet" href="{% static "decision/custom.css" %}">
-
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
-    <title>Decision-Making System</title>
-</head>
-<body>
-
+{% block content %}
 <script>
     function viewDiv(){
         document.getElementById("result").style.display = "block";
         document.getElementById('hider').hidden = true;
     };
 </script>
-
-<div class="container">
+<div class="mx-auto" style="width: 32rem;">
     <h1>Decision-Making System</h1>
     <button id="hider" type="button" class="btn btn-primary" onmousedown="viewDiv()">Here goes!</button>
 </div>
 
-<div class="container">
-<div  id="result" class="card" style="width: 32rem;">
+
+<div  class="container mx-auto" id="result" class="card" style="width: 32rem;">
   <div class="card-body">
   <h5 class="card-title">Your answer is {{ answer }}</h5>
   </div>
-  <img src="{{ gif }}" class="card-img-top" alt="...">
-</div>
+  <img src="{{ gif }}" class="card-img-top" alt="{{ answer }}">
 </div>
 
-</body>
-</html>
+
+
+{% endblock %}
